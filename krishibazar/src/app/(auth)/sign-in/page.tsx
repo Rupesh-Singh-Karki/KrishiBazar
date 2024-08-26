@@ -1,7 +1,8 @@
 "use client";
-import Navbar from "@/Components/Navbar";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
+import hero from '@/app/_components/assets/sign-in-background.jpeg';
+import signimg from '@/app/_components/assets/sign-in.jpeg';
 
 export default function Component() {
   const { data: session } = useSession();
@@ -15,25 +16,33 @@ export default function Component() {
   };
 
   return (
-    <>
-      <Navbar />
-      <div
-        className="flex items-center justify-center h-screen bg-cover bg-center"
-        style={{ backgroundImage: `url(/bg.png)` }}
-      >
-        <div className="flex flex-col lg:flex-row h-3/4 lg:h-4/5 bg-white bg-opacity-90 p-4 rounded-lg shadow-lg w-11/12 sm:w-3/4 lg:w-2/3 max-w-4xl">
-          <div className="lg:w-1/2 h-1/3 lg:h-full flex items-center justify-center mb-4 lg:mb-0">
-            <Image
-              src="/Designer 1.svg"
-              alt="Designer Image"
-              width={300}
-              height={300}
-              className="rounded-sm w-full h-full object-contain"
-              layout="intrinsic"
-            />
-          </div>
+    <div className="relative w-full h-screen flex items-center justify-center">
+      <Image
+        src={hero}
+        alt="img"
+        placeholder='blur'
+        className='absolute top-0 left-0 w-full h-full saturate-125 blur-md'
+        layout="fill"
+        quality={75}
+        objectFit="cover"
+        objectPosition="center"
+        style={{ backgroundImage: 'linear-gradient(rgba(8,8,37,0.85),rgba(0,15,80,0.675))' }}
+      />
 
-          <div className="lg:w-2/3 px-4 py-3 flex flex-col justify-center">
+      <div className="relative z-10 bg-white h-4/5 w-3/5 rounded-xl shadow-lg flex">
+        {/* Image on the left side */}
+        <div className="relative w-2/5 h-full">
+          <Image
+            src={signimg}
+            alt="simg"
+            placeholder="blur"
+            className="absolute inset-0 h-full w-full object-fill rounded-l-xl"
+          />
+        </div>
+        {/* Right side content can be added here */}
+        <div className="w-3/5 p-8 flex items-center justify-center">
+          {/* Content goes here */}
+          <div className="lg:w-full px-4 py-3 flex flex-col justify-center">
             {session ? (
               <div className="text-center">
                 <p className="text-gray-700">Signed in as {session.user.email}</p>
@@ -47,27 +56,27 @@ export default function Component() {
               </div>
             ) : (
               <div>
-                <h2 className="text-2xl font-bold text-gray-700 mb-4 lg:mb-6 text-center pr-3">Sign in</h2>
+                <h2 className="text-3xl font-bold text-gray-700 mb-4 lg:mb-6 text-center pr-3">Sign in</h2>
                 <form>
                   <div className="mb-4">
-                    <label className="block text-gray-600 mb-2" htmlFor="email">
+                    <label className="block font-bold text-gray-600 mb-2" htmlFor="email">
                       Email
                     </label>
                     <input
                       type="email"
                       id="email"
-                      className="w-full px-2 py-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-full px-2 py-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
                       placeholder="Enter your email"
                     />
                   </div>
                   <div className="mb-6">
-                    <label className="block text-gray-600 mb-2" htmlFor="password">
+                    <label className="block font-bold text-gray-600 mb-2" htmlFor="password">
                       Password
                     </label>
                     <input
                       type="password"
                       id="password"
-                      className="w-full px-2 py-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="w-full px-2 py-2 border rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
                       placeholder="Enter your password"
                     />
                   </div>
@@ -75,7 +84,7 @@ export default function Component() {
                     <button
                       type="button"
                       onClick={handleSignIn}
-                      className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                       aria-label="Sign in"
                     >
                       Sign in
@@ -87,6 +96,6 @@ export default function Component() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

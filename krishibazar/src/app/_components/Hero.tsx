@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import img from './assets/ADAS-7-1.jpg'
-import logo from './assets/image 2.png'
+import img from './assets/Hero-Tractor.jpg'
+import logo from './assets/logo2.png'
 
 function Hero() {
   return (
@@ -20,8 +20,8 @@ function Hero() {
             />
             <div className="mx-auto z-0 absolute flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
                         <div className='flex items-center justify-center mx-[15px]'>
-                            <Image src={logo} alt='logo' width={60} height={60}/>
-                            <h1 className='text-3xl font-extrabold text-gray-800 font-verdana' >KrishiBazar</h1>
+                            <Image src={logo} alt='logo' width={40} height={40} style={{ borderRadius: '25%' }}/>
+                            <h1 className='text-3xl font-extrabold text-gray-800 font-verdana pl-2.5'>KrishiBazar</h1>
                         </div>
 
                         <div className="flex flex-1 items-center justify-center text-center md:justify-between">
@@ -60,13 +60,13 @@ function Hero() {
                                 <div className="sm:flex sm:gap-4">
                                     <a
                                         className="block rounded-md bg-teal-600 px-5 py-2.5 text-l font-medium text-white transition hover:bg-teal-700"
-                                        href="#"
+                                        href="/sign-in"
                                     >
                                         Login
                                     </a>
 
                                     <a
-                                        className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-l font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
+                                        className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-l font-medium text-teal-600 transition hover:text-teal-600/25 sm:block"
                                         href="#"
                                     >
                                         Register
@@ -92,8 +92,24 @@ function Hero() {
                         </div>
             </div>
             <div className='flex flex-col justify-center place-items-center absolute top-[60%] left-[23%]'>
-                <h1 className='uppercase font-black inline-block align-text-bottom text-9xl text-white backdrop-opacity-7 drop-shadow-[4px_7px_var(--tw-shadow-color)] shadow-gray-500'>contract</h1>
-                <h1 className='uppercase font-black -translate-y-5 inline-block align-text-top text-8xl text-white drop-shadow-[5px_6px_var(--tw-shadow-color)] shadow-gray-600'>farming</h1>
+                <h1 className='uppercase font-black inline-block align-text-bottom text-9xl text-white backdrop-opacity-7 drop-shadow-[4px_7px_var(--tw-shadow-color)] shadow-gray-500'
+                    style={{
+                        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                    }}
+                >
+                    contract
+                </h1>
+                <h1 className='uppercase font-black -translate-y-5 inline-block align-text-top text-8xl text-white drop-shadow-[5px_6px_var(--tw-shadow-color)] shadow-gray-600'
+                    style={{
+                        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                    }}
+                >
+                    farming
+                </h1>
             </div>
         </div>
     </div>
