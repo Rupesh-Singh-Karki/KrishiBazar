@@ -1,119 +1,113 @@
-import React from 'react'
-import Image from 'next/image'
-import img from './assets/Hero-Tractor.jpg'
-import logo from './assets/logo2.png'
+import React from 'react';
+import Image from 'next/image';
+import img from './assets/Hero-Tractor.jpg';
+import mobileimg from './assets/mobile-tractor-hero.jpeg';
+import logo from './assets/logo2.png';
 
 function Hero() {
   return (
-    <div>
-        <div>
-            <Image
+    <div className="relative h-screen">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <div className="hidden md:block h-full w-full">
+          <Image
             src={img}
             alt="img"
-            placeholder='blur'
-            className='h-screen absolute saturate-125'
-            layout="fit"
+            placeholder="blur"
+            layout="fill"
             quality={75}
             objectFit="cover"
             objectPosition="center"
-            style={{backgroundImage:'linear-gradient(rgba(8,8,37,0.85),rgba(0,15,80,0.675))'}}
-            />
-            <div className="mx-auto z-0 absolute flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-                        <div className='flex items-center justify-center mx-[15px]'>
-                            <Image src={logo} alt='logo' width={40} height={40} style={{ borderRadius: '25%' }}/>
-                            <h1 className='text-3xl font-extrabold text-gray-800 font-verdana pl-2.5'>KrishiBazar</h1>
-                        </div>
-
-                        <div className="flex flex-1 items-center justify-center text-center md:justify-between">
-                            <nav aria-label="Global" className="hidden md:block">
-                                <ul className="flex items-center gap-6 mx-10 ">
-                                    <li>
-                                        <a className="text-black text-l font-bold transition hover:text-slate-300" href="/"> HOME </a>
-                                    </li>
-
-                                    <li>
-                                        <a className="text-black text-l font-bold transition hover:text-slate-300" href="#"> WORKING </a>
-                                    </li>
-
-                                    <li>
-                                        <a className="text-black text-l font-bold transition hover:text-slate-300" href="#"> BUY/SELL </a>
-                                    </li>
-
-                                    <li>
-                                        <a className="text-black text-l font-bold transition hover:text-slate-300" href="#"> CONTRACT </a>
-                                    </li>
-                                    <li className='ml-10'>
-                                        <a className="text-black text-l font-bold transition hover:text-slate-300" href="#"> NEWS </a>
-                                    </li>
-
-                                    <li>
-                                        <a className="text-black text-l font-bold transition hover:text-slate-300" href="#"> CHARTS </a>
-                                    </li>
-
-                                    <li>
-                                        <a className="text-black text-l font-bold transition hover:text-slate-300" href="#"> CHATROOM </a>
-                                    </li>
-                                </ul>
-                            </nav>
-
-                            <div className="flex items-center gap-4">
-                                <div className="sm:flex sm:gap-4">
-                                    <a
-                                        className="block rounded-md bg-teal-600 px-5 py-2.5 text-l font-medium text-white transition hover:bg-teal-700"
-                                        href="/sign-in"
-                                    >
-                                        Login
-                                    </a>
-
-                                    <a
-                                        className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-l font-medium text-teal-600 transition hover:text-teal-600/25 sm:block"
-                                        href="#"
-                                    >
-                                        Register
-                                    </a>
-                                </div>
-
-                                <button
-                                    className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"
-                                >
-                                    <span className="sr-only">Toggle menu</span>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="size-5"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                    >
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-            </div>
-            <div className='flex flex-col justify-center place-items-center absolute top-[60%] left-[23%]'>
-                <h1 className='uppercase font-black inline-block align-text-bottom text-9xl text-white backdrop-opacity-7 drop-shadow-[4px_7px_var(--tw-shadow-color)] shadow-gray-500'
-                    style={{
-                        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                    }}
-                >
-                    contract
-                </h1>
-                <h1 className='uppercase font-black -translate-y-5 inline-block align-text-top text-8xl text-white drop-shadow-[5px_6px_var(--tw-shadow-color)] shadow-gray-600'
-                    style={{
-                        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                    }}
-                >
-                    farming
-                </h1>
-            </div>
+            className="saturate-125"
+            style={{ backgroundImage: 'linear-gradient(rgba(8,8,37,0.85),rgba(0,15,80,0.675))' }}
+          />
         </div>
+        <div className="block md:hidden h-full w-full">
+          <Image
+            src={mobileimg}
+            alt="mobile-img"
+            placeholder="blur"
+            layout="fill"
+            quality={75}
+            objectFit="cover"
+            objectPosition="center"
+            className="saturate-125"
+            style={{ backgroundImage: 'linear-gradient(rgba(8,8,37,0.85),rgba(0,15,80,0.675))' }}
+          />
+        </div>
+      </div>
+
+      {/* Navbar */}
+      <div className="relative z-10 flex h-16 items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center">
+          <Image src={logo} alt="logo" width={40} height={40} className="rounded-full" />
+          <h1 className="text-3xl font-extrabold text-gray-800 font-verdana pl-2.5">KrishiBazar</h1>
+        </div>
+
+        <div className="hidden md:flex items-center space-x-6">
+          <a className="text-black text-l font-bold transition hover:text-slate-300" href="/">HOME</a>
+          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">WORKING</a>
+          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">BUY/SELL</a>
+          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">CONTRACT</a>
+          <a className="text-black text-l font-bold transition hover:text-slate-300 ml-10" href="#">NEWS</a>
+          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">CHARTS</a>
+          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">CHATROOM</a>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <a
+            className="bg-teal-600 text-white font-medium px-5 py-2.5 rounded-md transition hover:bg-teal-700"
+            href="/sign-in"
+          >
+            Login
+          </a>
+          <a
+            className="hidden sm:block bg-gray-100 text-teal-600 font-medium px-5 py-2.5 rounded-md transition hover:text-teal-600/25"
+            href="#"
+          >
+            Register
+          </a>
+          <button className="md:hidden block p-2.5 text-gray-600 bg-gray-100 rounded">
+            <span className="sr-only">Toggle menu</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Contract and Farming Text */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center z-10">
+        <h1
+          className="uppercase font-black text-5xl md:text-9xl text-white drop-shadow-[4px_7px_var(--tw-shadow-color)] shadow-gray-500"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          contract
+        </h1>
+        <h1
+          className="uppercase font-black text-4xl md:text-8xl text-white drop-shadow-[5px_6px_var(--tw-shadow-color)] shadow-gray-600"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5))',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          farming
+        </h1>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
