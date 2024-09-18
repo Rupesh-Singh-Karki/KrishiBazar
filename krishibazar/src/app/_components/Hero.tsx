@@ -63,7 +63,7 @@ function Hero() {
           </a>
           <a
             className="hidden sm:block bg-gray-100 text-teal-600 font-medium px-5 py-2.5 rounded-md transition hover:text-teal-600/25"
-            href="#"
+            href="/signup"
           >
             Register
           </a>
