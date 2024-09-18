@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link from Next.js
 import img from './assets/Hero-Tractor.jpg';
 import mobileimg from './assets/mobile-tractor-hero.jpeg';
 import logo from './assets/logo2.png';
@@ -45,28 +46,22 @@ function Hero() {
         </div>
 
         <div className="hidden md:flex items-center space-x-6">
-          <a className="text-black text-l font-bold transition hover:text-slate-300" href="/">HOME</a>
-          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">WORKING</a>
-          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">BUY/SELL</a>
-          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">CONTRACT</a>
-          <a className="text-black text-l font-bold transition hover:text-slate-300 ml-10" href="#">NEWS</a>
-          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">CHARTS</a>
-          <a className="text-black text-l font-bold transition hover:text-slate-300" href="#">CHATROOM</a>
+          <Link href="/" className="text-black text-l font-bold transition hover:text-slate-300">HOME</Link>
+          <Link href="#" className="text-black text-l font-bold transition hover:text-slate-300">WORKING</Link>
+          <Link href="/buy-sell" className="text-black text-l font-bold transition hover:text-slate-300">BUY/SELL</Link>
+          <Link href="#" className="text-black text-l font-bold transition hover:text-slate-300">CONTRACT</Link>
+          <Link href="#" className="text-black text-l font-bold transition hover:text-slate-300 ml-10">NEWS</Link>
+          <Link href="#" className="text-black text-l font-bold transition hover:text-slate-300">CHARTS</Link>
+          <Link href="#" className="text-black text-l font-bold transition hover:text-slate-300">CHATROOM</Link>
         </div>
 
         <div className="flex items-center space-x-4">
-          <a
-            className="bg-teal-600 text-white font-medium px-5 py-2.5 rounded-md transition hover:bg-teal-700"
-            href="/sign-in"
-          >
+          <Link href="/sign-in" className="bg-teal-600 text-white font-medium px-5 py-2.5 rounded-md transition hover:bg-teal-700">
             Login
-          </a>
-          <a
-            className="hidden sm:block bg-gray-100 text-teal-600 font-medium px-5 py-2.5 rounded-md transition hover:text-teal-600/25"
-            href="/signup"
-          >
+          </Link>
+          <Link href="/signup" className="hidden sm:block bg-gray-100 text-teal-600 font-medium px-5 py-2.5 rounded-md transition hover:text-teal-600/25">
             Register
-          </a>
+          </Link>
           <button className="md:hidden block p-2.5 text-gray-600 bg-gray-100 rounded">
             <span className="sr-only">Toggle menu</span>
             <svg
